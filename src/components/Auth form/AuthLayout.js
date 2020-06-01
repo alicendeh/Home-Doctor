@@ -2,6 +2,8 @@ import React, { useState, Fragment } from 'react';
 import { Link, Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import Signup from '../Pages/Signup';
 import Signin from '../Pages/Signin';
+import MainSignup from '../Pages/MainSignup';
+import DocSignup from '../Pages/DocSignup';
 
 const AuthLayout = () => {
   const [num, setnum] = useState({ a: 1, b: 0 });
@@ -17,7 +19,7 @@ const AuthLayout = () => {
       <Fragment>
         <div className='auth-form'>
           <ul className='auth-links'>
-            <Link to='/signup'>
+            <Link to='/signup' style={{ textDecoration: 'none' }}>
               <li
                 onClick={click}
                 className='link1'
@@ -31,7 +33,7 @@ const AuthLayout = () => {
                 SIGN UP
               </li>
             </Link>
-            <Link to='/signin'>
+            <Link to='/signin' style={{ textDecoration: 'none' }}>
               <li
                 onClick={click1}
                 className='link2'
@@ -46,8 +48,9 @@ const AuthLayout = () => {
               </li>
             </Link>
           </ul>
+
           <Switch>
-            <Route exact path='/signup' component={Signup} />
+            <Route exact path='/signup' component={MainSignup} />
             <Route exact path='/signin' component={Signin} />
           </Switch>
         </div>

@@ -1,28 +1,36 @@
 import React, { useState } from 'react';
 
-const Signup = () => {
+const DocSignup = () => {
   const [user, setuser] = useState({
     fname: '',
     lname: '',
     email: '',
     password: '',
     password2: '',
+    field: '',
   });
-  const { fname, lname, email, password, password2 } = user;
+  const { fname, lname, email, password, password2, field } = user;
   const onClick = (e) => {
     setuser({ ...user, [e.target.name]: e.target.value });
   };
   const onSubmit = (e) => {
     e.preventDefault();
     console.log('submitted');
-    setuser({ fname: '', lname: '', email: '', password: '', password2: '' });
+    setuser({
+      fname: '',
+      lname: '',
+      email: '',
+      password: '',
+      password2: '',
+      field: '',
+    });
   };
 
   return (
     <form className='signup-form' onSubmit={onSubmit}>
       <h2>Create your account</h2>
       <h4>
-        Get in touch with the best medical <br /> specialists in the national
+        Get in touch with Patients who need <br /> your help around the national
         territory
       </h4>
       <input
@@ -65,9 +73,18 @@ const Signup = () => {
         onClick={onClick}
         required
       />
+      <input
+        type='text'
+        placeholder='Specialisation'
+        name='field'
+        value={field}
+        onClick={onClick}
+        required
+        style={{ width: '75%' }}
+      />
       <input type='submit' value='SIGN UP' />
     </form>
   );
 };
 
-export default Signup;
+export default DocSignup;

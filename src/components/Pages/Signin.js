@@ -27,7 +27,7 @@ const Signin = () => {
         type='email'
         placeholder='Email Address'
         name='email'
-        vale={email}
+        value={email}
         onClick={onClick}
         required
       />
@@ -35,7 +35,7 @@ const Signin = () => {
         type='password'
         placeholder='Password '
         name='password'
-        vale={password}
+        value={password}
         onClick={onClick}
         required
       />

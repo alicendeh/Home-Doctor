@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-
 import Signup from './components/Pages/Signup';
 import Signin from './components/Pages/Signin';
 import Navbar from './components/Layouts/Navbar';
